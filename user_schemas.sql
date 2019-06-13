@@ -1,0 +1,25 @@
+USE userDB;
+
+CREATE TABLE Site_User (
+    username VARCHAR(256) NOT NULL PRIMARY KEY,
+    user_password VARCHAR(256) NOT NULL,
+    email VARCHAR(256) NOT NULL
+);
+
+CREATE TABLE Post (
+    post_id INT NOT NULL AUTO_INCREMENT,
+    post_title VARCHAR(256) NOT NULL,
+    content TEXT NOT NULL,
+    post_date DATE,
+    username VARCHAR(256) NOT NULL,
+    PRIMARY KEY(post_id),
+    FOREIGN KEY (username) REFERENCES Site_User(username)
+);
+
+/* WE NEED TO FIGURE OUT THE STRUCTURE OF OUR DATABASE
+DELIMITER //
+CREATE PROCEDURE
+BEGIN
+END //
+DELIMITER ;
+*/
