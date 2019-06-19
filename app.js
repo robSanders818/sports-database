@@ -75,6 +75,7 @@ if(!err) {
 app.use('/home', require('./routes/index'));
 app.use('/user',require('./routes/userController'));
 app.use('/team',require('./routes/teamController'));
+app.use('/search',require('./routes/searchController'));
 
 //app.use('/login',login.login)
 
