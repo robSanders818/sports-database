@@ -6,13 +6,11 @@
     <p>
         <h2>Welcome <%= user.username %></h2>
     </p>
-    <p>
-        <h2><%= user.email %></h2>
-    </p>
+
     <form id="desc" action="/desc" method="post">
         <ul>
-            <li><textarea rows="4" cols="50" id="newDesc" name="newDesc"><%= user.description %></textarea></li>
-            <li><input type="submit" value="change"></li>
+            <textarea rows="1" cols="20" id="newDesc" name="newDesc"><%= user.description %></textarea>
+            <input type="submit" value="Search for a Player">
         </ul>
     </form>
 
