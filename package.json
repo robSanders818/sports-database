@@ -2,11 +2,9 @@
   "name": "sports-database",
   "version": "1.0.0",
   "description": "A database of statistics in baseball and in the online game Counter Strike",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,8 +18,13 @@
   },
   "homepage": "https://github.com/robSanders818/sports-database#readme",
   "dependencies": {
-    "next": "^8.1.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "body-parser": "^1.16.0",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.2",
+    "express": "^4.14.0",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.16.2",
+    "mysql": "^2.13.0",
+    "nodemon": "^1.19.1"
   }
 }

@@ -1,0 +1,39 @@
+
+        <title> KnowItAll:Sports| Home</title>
+
+
+        <!------------Navigation Bar---------------->
+<%- include header.ejs %>
+
+      <!--------------------->
+      <div class = "form-layout">
+            <h1>Login</h1>
+          <div id = "index-buttons">
+            <% include ./partials/messages %>
+            <form action="/user/login" method="POST">
+              <ul>
+                <li><label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Enter Email"
+                /></li>
+                <li><label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Enter Password"
+                /></li>
+              <li><button type="submit" class="btn btn-primary btn-block">Login</button></li>
+              </ul>
+            </form>
+              No Account? <a href="/user/register">Register</a>
+            </p>
+            </div>
+      </div>
+      
+
