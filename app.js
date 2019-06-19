@@ -26,6 +26,15 @@ app.use(
     })
   );
 
+var sess;
+
+app.get('/',function(req,res){
+  sess=req.session;
+ 
+  sess.username; 
+  sess.email; 
+});
+
   // Connect flash
 app.use(flash());
 

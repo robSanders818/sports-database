@@ -63,24 +63,28 @@ router.post('/register', (req, res) => {
 });
 
 // Handles login
-router.post('/register', (req, res) => {
+router.post('/login', (req, res) => {
   var user={
     "username":req.body.username,
     "password":req.body.password
   }
 
-  pool.query('Call login(?,?)',[user.username,user.password], (err, res, fields) => {
-    if (error) {
-      console.log("error ocurred",error);
+  pool.query('SELECT * FROM web_user WHERE ? = username && ? = pass',[user.username,user.password], (err, results, fields) => {
+    if (err) {
+      console.log("error ocurred",err);
       res.send({
         "code":400,
         "failed":"error ocurred"
-      }) 
-    } else if(fields.length < 1) {
-      res.flash("error_msg", "Either your password is wrong or your username doesnt exist");
-      res.redirect('/user/register');
+      }) ;
+    } else if(results.length < 1) {
+      req.flash("error_msg", "Either your password is wrong or your username doesnt exist");
+      res.redirect('/user/login');
     } else {
       console.log("login successful");
+      //sess.username = results[0][0]; 
+      res.render('dashboard', {
+        user: results[0]
+      });
     }
   })
 });
