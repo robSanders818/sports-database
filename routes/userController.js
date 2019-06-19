@@ -1,9 +1,16 @@
 var express    = require("express");
 //const app = express();
 const router = express.Router();
+const flash = require('connect-flash');
 
-const conn = require('mysql');
-//const conn = mysql.createPool();
+const mysql = require('mysql');
+const pool = mysql.createPool({
+  connectionLimit : 10,
+  host            : '104.196.165.56',
+  user            : 'teamDD',
+  password        : 'BolajiRobertJovan2022',
+  database        : 'KnowItAllSports'
+});
 
 //route to handle user registration
 //router.post('/register',login.register);
@@ -26,12 +33,12 @@ router.post('/register', (req, res) => {
     var today = new Date();
     var users={
       "username":req.body.username,
-      "email":req.body.email,
-      "password":req.body.password
+      "password":req.body.password,
+      "email":req.body.email
     }
 
     if(users.password == req.body.password){
-    conn.query('Call add_user ?',users, function (error, results, fields) {
+    pool.query('CALL add_user(?,?,?)',[users.username,users.password,users.email], (error, results, fields) => {
     if (error) {
       console.log("error ocurred",error);
       res.send({
@@ -40,10 +47,11 @@ router.post('/register', (req, res) => {
       })
     }else{
       console.log('The solution is: ', results);
-      res.send({
-        "code":200,
-        "success":"user registered sucessfully"
-          });
+      req.flash(
+        'success_msg',
+        "Yo are now registered and can log in"
+          );
+          res.redirect('/user/login');
     }
     });
 } else {
@@ -52,6 +60,29 @@ router.post('/register', (req, res) => {
         "failed":"Either the passwords don't match or the emails don't match"
     });
 }
+});
+
+// Handles login
+router.post('/register', (req, res) => {
+  var user={
+    "username":req.body.username,
+    "password":req.body.password
+  }
+
+  pool.query('Call login(?,?)',[user.username,user.password], (err, res, fields) => {
+    if (error) {
+      console.log("error ocurred",error);
+      res.send({
+        "code":400,
+        "failed":"error ocurred"
+      }) 
+    } else if(fields.length < 1) {
+      res.flash("error_msg", "Either your password is wrong or your username doesnt exist");
+      res.redirect('/user/register');
+    } else {
+      console.log("login successful");
+    }
+  })
 });
 
 module.exports = router;
