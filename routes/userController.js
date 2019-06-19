@@ -49,7 +49,7 @@ router.post('/register', (req, res) => {
       console.log('The solution is: ', results);
       req.flash(
         'success_msg',
-        "Yo are now registered and can log in"
+        "You are now registered and can log in"
           );
           res.redirect('/user/login');
     }
