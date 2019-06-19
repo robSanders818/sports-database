@@ -16,6 +16,7 @@ router.use('/components', express.static('assets'));
 // Welcome Page
 router.get('/', (req, res) => res.render('index'));
 
+
 // Dashboard
 router.get('/dashboard', (req, res) =>{
     //posts = [];
