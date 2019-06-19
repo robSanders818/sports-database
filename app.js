@@ -28,6 +28,8 @@ app.use(
 
 var sess;
 
+app.use('/', require('./routes/index'));
+
 app.get('/',function(req,res){
   sess=req.session;
  
@@ -70,8 +72,10 @@ if(!err) {
 
 
 //Routes
+app.use('/home', require('./routes/index'));
 app.use('/user',require('./routes/userController'));
-app.use('/', require('./routes/index.js'));
+app.use('/team',require('./routes/teamController'));
+
 //app.use('/login',login.login)
 
 
