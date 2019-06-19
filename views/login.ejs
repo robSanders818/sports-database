@@ -12,23 +12,23 @@
             <% include ./partials/messages %>
             <form action="/user/login" method="POST">
               <ul>
-                <li><label for="username">Username</label>
+                <label for="username">Username</label>
                 <input
                   type="username"
                   id="username"
                   name="username"
                   class="form-control"
                   placeholder="Enter username"
-                /></li>
-                <li><label for="password">Password</label>
+                />
+                <label for="password">Password</label>
                 <input
                   type="password"
                   id="password"
                   name="password"
                   class="form-control"
                   placeholder="Enter Password"
-                /></li>
-              <li><button type="submit" class="btn btn-primary btn-block">Login</button></li>
+                />
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
               </ul>
             </form>
               No Account? <a href="/user/register">Register</a>
