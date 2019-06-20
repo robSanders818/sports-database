@@ -69,7 +69,7 @@ router.post('/login', (req, res) => {
     "password":req.body.password
   }
 
-  pool.query('SELECT * FROM web_user WHERE ? = username && ? = pass',[user.username,user.password], (err, results, fields) => {
+  pool.query('CALL login(?,?)',[user.username,user.password], (err, results, fields) => {
     if (err) {
       console.log("error ocurred",err);
       res.send({
