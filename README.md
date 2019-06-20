@@ -1,11 +1,23 @@
 # sports-database
 A database of statistics in baseball and in the online game
 
-- Add logo redirect to homepage
-- Add after login, redirect to homepage
-- Add dashboard go to dashboard 
-- Drop down menu for post, should have options to create post and view your following feed
-- Add button to view standings
-- Create Standings page, which shows each league, and then each divisions win/losses for a given year, selected i a drop down menu
-- Option on Standings page to expand to show each stat for each team in that year
-- Option to view Standings in standard form, by league, and the whole MLB, and sort by stats.
+------------------------
+## **How To Run This Assignment**
+We were originally going to put this on the web and host the website off of a domain,
+due to time constraints we decided that it wasn't really worth it and opted to just host it locally(though our actual database and DBMS is hosted in the cloud using the google cloud engine).
+
+Requirements:
+- You are going to need to have node.js installed on your computer.
+- **You can download it here :** https://nodejs.org/en/download/
+- **If you want to fork the project files(node.js not included) 
+from github heres the link :** https://github.com/robSanders818/sports-database
+--------------------------------
+### Running the Web App
+
+- Just cd to where the sports-database folder is located(in your terminal of choice).
+- The terminal should looke something like this(The sports-database part is the most important). 
+- ```C:\Users\broti\OneDrive\Documents\GitHub\sports-database>```
+- Type in ```npm install``` to install all the package dependencies
+- Once you've done that just type in ```node app``` and the program should run
+- To view your results you'll need to open a browser and go to ```localhost:5000/```
+
