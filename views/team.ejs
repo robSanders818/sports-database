@@ -9,8 +9,8 @@
     <p>
         <h2>League: <a href = '/team/league/<%= info.league %>'><%= info.league %></h2></a>
         </p>
-        <form>
-            
+        <form action = '/profile/follow' method = "POST">
+            <button type = 'submit' value = '<%= info.team_id %>' class = "btn btn-primary btn-block" id = 'teamid' name = 'teamid'><%= follow %></button>
         </form>
 
     <h2>Stats From Each Year</h2>
