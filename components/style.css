@@ -6,6 +6,6 @@ body {
     color: rgb(226, 225, 225);
 }
 
-li{
-    color: rgb(39, 38, 38);
+p{
+    padding: 5px;
 }
