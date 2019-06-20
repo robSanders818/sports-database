@@ -3,9 +3,9 @@ body {
     background-image: url("https://i.imgur.com/rW6lWeJ.png");
     background-repeat: repeat;
     font-family: 'Roboto Slab', serif;
-    color: rgb(32, 32, 32);
+    color: rgb(226, 225, 225);
 }
 
-p{
-    padding: 5px;
+li{
+    color: rgb(39, 38, 38);
 }
