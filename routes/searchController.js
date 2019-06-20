@@ -3,5 +3,5 @@ const router = express.Router();
 
 
 router.post('/', (req, res) => {
-
+    const searchInput
 });
