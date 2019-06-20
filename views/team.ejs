@@ -13,12 +13,41 @@
             <a href = '/team/<%= info.league %>'><h4><%= info.league %></h4></a>
         </p>
 
+    <h2>Stats From Each Year</h2>
     <%  for(var i = 0; i < stats.length; i++){ %>
-        <li>
-            <p><h3>Year </h3><%= stats[i].year %></p>
-            <p>Division Rank <%= stats[i].div_rank %></p>
-            <p>Games <%= stats[i].games %></p>
-        </li>
+        <ul class="list-group">
+            <li class="list-group-item"><b>Year: </b><%= stats[i].team_year %></li>
+            <li class="list-group-item">Division Rank: <%= stats[i].div_rank %></li>
+            <li class="list-group-item">Wins: <%= stats[i].wins %></li>
+            <li class="list-group-item">Losses: <%= stats[i].losses %></li>
+            <li class="list-group-item">Runs: <%= stats[i].runs %></li>
+            <li class="list-group-item">At Bats: <%= stats[i].at_bats %></li>
+            <li class="list-group-item">Hits: <%= stats[i].hits %></li>
+            <li class="list-group-item">Doubles: <%= stats[i].doubles %></li>
+            <li class="list-group-item">Triples: <%= stats[i].triples %></li>
+            <li class="list-group-item">Home Runs: <%= stats[i].homeruns %></li>
+            <li class="list-group-item">Walks: <%= stats[i].walks %></li>
+            <li class="list-group-item">Strikeouts: <%= stats[i].strikeouts %></li>
+            <li class="list-group-item">Stolen Bases: <%= stats[i].stolen_bases %></li>
+            <li class="list-group-item">Caught Stealing: <%= stats[i].caught_stealing %></li>
+            <li class="list-group-item">Hits By Pitches: <%= stats[i].hit_by_pitches %></li>
+            <li class="list-group-item">Sacrifice Flies: <%= stats[i].sac_flies %></li>
+            <li class="list-group-item">Runs Allowed: <%= stats[i].runs_allowed %></li>
+            <li class="list-group-item">Earned Runs <%= stats[i].earned_runs %></li>
+            <li class="list-group-item">Earned Run Average: <%= stats[i].era %></li>
+            <li class="list-group-item">Complete Games: <%= stats[i].complete_games %></li>
+            <li class="list-group-item">Shutouts: <%= stats[i].shutouts %></li>
+            <li class="list-group-item">Saves: <%= stats[i].saves %></li>
+            <li class="list-group-item">Hits Allowed: <%= stats[i].hits_allowed %></li>
+            <li class="list-group-item">Walks Allowed: <%= stats[i].walks_allowed %></li>
+            <li class="list-group-item">Pitcher Strikeouts: <%= stats[i].pitcher_strikeouts %></li>
+            <li class="list-group-item">Team Errors: <%= stats[i].team_errors %></li>
+            <li class="list-group-item">Double Plays <%= stats[i].double_plays %></li>
+            <li class="list-group-item">Field Percentage: <%= stats[i].field_pct %></li>
+            <li class="list-group-item">Team Stadium: <%= stats[i].team_park %></li>
+            <li class="list-group-item">Attendance: <%= stats[i].attendance %></li>
+        </ul>
+        <hr/>
         <br/>
     <% } %>
     <script>
