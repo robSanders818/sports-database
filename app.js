@@ -69,6 +69,7 @@ app.use('/user',require('./routes/userController'));
 app.use('/team',require('./routes/teamController'));
 app.use('/search',require('./routes/searchController'));
 app.use('/profile',require('./routes/profileController'));
+app.use('/player',require('./routes/playerController'));
 
 //app.use('/login',login.login)
 

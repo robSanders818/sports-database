@@ -34,22 +34,32 @@ router.get('/:teamid', (req, res) => {
 
             pool.query('CALL team_stats_by_id(?)', teamid, (error, results, fields) => {
                 var statsInfo = results[0];
+                pool.query('CALL all_batters_onteam(?,?)', [teamid, 2018], (error, results, fields) => {
+                    var batters = results[0];
+                pool.query('CALL all_pitchers_onteam(?,?)', [teamid, 2018], (error, results, fields) => {
+                    var pitchers = results[0];
                 pool.query('CALL is_user_following_team(?,?)', [req.session.user.username, teamid], (error, results, fields) => {
                     console.log(results[0].length)
                     if (results[0].length == 0) {
                         res.render('team.ejs', {
                             info: teamInfo[0],
                             stats: statsInfo,
-                            follow: 'Follow'
+                            follow: 'Follow',
+                            batters: batters,
+                            pitchers: pitchers
                         })
                     } else {
                         res.render('team.ejs', {
                             info: teamInfo[0],
                             stats: statsInfo,
-                            follow: 'Unfollow'
+                            follow: 'Unfollow',
+                            batters: batters,
+                            pitchers: pitchers
                         })
                     }
                 })
+            })
+        })
             })
         }
     });

@@ -12,7 +12,19 @@
         <form action = '/profile/follow' method = "POST">
             <button type = 'submit' value = '<%= info.team_id %>' class = "btn btn-primary btn-block" id = 'teamid' name = 'teamid'><%= follow %></button>
         </form>
-
+    <h3> Current Roster</h3>
+    <h4>Pitchers</h4>
+    <%  for(var i = 0; i < pitchers.length; i++){ %>
+        <ul class="list-group">
+                <li class="list-group-item  list-group-item-warning"><a href = '/player/<%= pitchers[i].player_id %>'><b>Player_ID: </b><%= pitchers[i].player_id %></a></li>
+        </ul>
+    <% } %>
+    <h4>Batters</h4>
+    <%  for(var i = 0; i < batters.length; i++){ %>
+        <ul class="list-group">
+                <li class="list-group-item  list-group-item-secondary"><a href = '/player/<%= batters[i].player_id %>'><b>Player_ID: </b><%= batters[i].player_id %></a></li>
+        </ul>
+    <% } %>
     <h2>Stats From Each Year</h2>
     <%  for(var i = 0; i < stats.length; i++){ %>
         <ul class="list-group">
