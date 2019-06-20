@@ -1,3 +1,7 @@
 body {
-    background-color: rgb(7, 188, 194);
+    
+    background-image: url("https://i.imgur.com/rW6lWeJ.png");
+    background-repeat: no-repeat;
+    font-family: 'Roboto Slab', serif;
+    color: rgb(226, 225, 225);
 }
