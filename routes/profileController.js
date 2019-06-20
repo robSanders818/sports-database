@@ -15,8 +15,24 @@ router.use('/components', express.static('components'));
 
 express().use(session({ secret: 'secret', cookie: { maxAge: 60000 }}))
 
+router.use('/account', (req, res) => res.render('account'));
+
 // Welcome Page
 //router.get('/', (req, res) => res.render('index'));
+
+router.post('/update', (req, res) => {
+    var newEmail = req.body.email;
+    var newPassword = req.body.password;
+    pool.query('CALL update_user(?,?,?)',[req.session.user.username, newPassword, newEmail], (errors, results, fields) => {
+        if(errors){
+            req.flash('error_msg','Logged out for security reasons unable to change user data due to error');
+            res.redirect('/home');
+        } else {
+            req.flash('success_msg','Logged out for security reasons, account information update was successful');
+            res.redirect('/home');
+        }
+    })
+})
 
 
 router.post('/follow', (req, res) => {

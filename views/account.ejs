@@ -3,7 +3,7 @@
 
 
         <!------------Navigation Bar---------------->
-<%- include header.ejs %>
+<%- include headerTwo.ejs %>
 
       <!--------------------->
       <div class = "form-layout">
@@ -12,7 +12,7 @@
             <br/>
           <div id = "index-buttons">
             <% include ./partials/messages %>
-            <form action="/user/login" method="POST">
+            <form action="/profile/update" method="POST">
               
                 <label for="username">New Email</label>
                 <input
