@@ -3,5 +3,7 @@ const router = express.Router();
 
 
 router.post('/', (req, res) => {
-    const searchInput
+    const searchInput = req.body.search;
 });
+
+module.exports = router;
