@@ -11,7 +11,7 @@ const pool = mysql.createPool({
 });
 
 
-router.use('/components', express.static('assets'));
+router.use('/components', express.static('components'));
 
 express().use(session({ secret: 'secret', cookie: { maxAge: 60000 }}))
 

@@ -12,7 +12,7 @@ const pool = mysql.createPool({
   database        : 'KnowItAllSports'
 });
 
-router.use('/components', express.static('assets'));
+router.use('/components', express.static('components'));
 
 // Post a Review Page
 //router.get('/review', ensureAuthenticated, (req, res) => res.render('review.ejs'));

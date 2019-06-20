@@ -22,6 +22,8 @@ const pool = mysql.createPool({
 //router.render()
 // Login Page
 
+router.use('/components', express.static('components'));
+
 
 router.get('/login', (req, res) => res.render('login'));
 

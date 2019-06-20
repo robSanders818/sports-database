@@ -10,6 +10,7 @@ const pool = mysql.createPool({
   database        : 'KnowItAllSports'
 });
 
+router.use('/components', express.static('components'));
 
 
 router.post('/', (req, res) => {
