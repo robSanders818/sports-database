@@ -27,11 +27,13 @@ router.get('/dashboard', (req, res) =>{
     }
     //posts = [];
     userdata = req.session.user;
-  //pool.query({user_id: req.user._id.toString()}, (req, posts)=>{
+  pool.query('CALL teams_user_follows(?)',[userdata.username], (error, results, fields)=>{
+      console.log(results[0]);
     res.render('dashboard', {
       user: userdata,
+      following: results[0]
     });
-  //});
+  });
 });
 
 module.exports = router;

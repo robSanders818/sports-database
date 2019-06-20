@@ -90,9 +90,10 @@ router.post('/login', (req, res) => {
       console.log("login successful");
       //sess.username = results[0][0]; 
       req.session.user = results[0][0];
-      res.render('dashboard', {
+     /* res.render('dashboard', {
         user: results[0][0]
-      });
+      });*/
+      res.redirect('/dashboard');
     }
   })
 });

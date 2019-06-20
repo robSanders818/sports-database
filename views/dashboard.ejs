@@ -7,6 +7,13 @@
         <h2>Welcome <%= user.username %>!</h2>
     </p>
 
-
+    <h3>Teams that I follow</h3>
+    <p><ul>
+            <%  for(var i = 0; i < following.length; i++){ %>
+                <li><a href ='/team/<%= following[i].team_id_uft %>'><h4><%= following[i].team_id_uft %></h4></a>
+                </li>
+                <br/>
+            <% } %>
+        </ul></p>
 
 </div>
