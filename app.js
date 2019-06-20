@@ -7,8 +7,6 @@ const session = require('express-session');
 const flash = require('connect-flash');
 
 
-
-
 //app.use(bodyParser.json());
 
 
@@ -30,12 +28,6 @@ var sess;
 
 app.use('/', require('./routes/index'));
 
-app.get('/',function(req,res){
-  sess=req.session;
- 
-  sess.username; 
-  sess.email; 
-});
 
   // Connect flash
 app.use(flash());

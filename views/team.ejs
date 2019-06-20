@@ -4,21 +4,21 @@
 <div class="dashboard-layout">
     <h1><%= info.team_name %></h1>
     <p>
-        <h2><%= info.league %></h2>
+        <h2>Division: <%= info.division %></h2>
     </p>
     <p>
-        <h2><%= info.division %></h2>
-    </p>
-    <p>
-            <a href = '/team/<%= info.league %>'><h4><%= info.league %></h4></a>
+        <h2>League: <a href = '/team/league/<%= info.league %>'><%= info.league %></h2></a>
         </p>
+        <form>
+            
+        </form>
 
     <h2>Stats From Each Year</h2>
     <%  for(var i = 0; i < stats.length; i++){ %>
         <ul class="list-group">
-            <li class="list-group-item"><b>Year: </b><%= stats[i].team_year %></li>
+            <li class="list-group-item  list-group-item-primary"><b>Year: </b><%= stats[i].team_year %></li>
             <li class="list-group-item">Division Rank: <%= stats[i].div_rank %></li>
-            <li class="list-group-item">Wins: <%= stats[i].wins %></li>
+            <li class="list-group-item ">Wins: <%= stats[i].wins %></li>
             <li class="list-group-item">Losses: <%= stats[i].losses %></li>
             <li class="list-group-item">Runs: <%= stats[i].runs %></li>
             <li class="list-group-item">At Bats: <%= stats[i].at_bats %></li>

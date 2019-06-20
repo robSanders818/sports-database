@@ -1,6 +1,7 @@
 // Imports JS middleware
 const express = require('express');
 const router = express.Router();
+const session = require('express-session');
 
 const mysql = require('mysql');
 const pool = mysql.createPool({
@@ -94,7 +95,7 @@ router.get('/:teamid', (req, res) =>{
 
         pool.query('CALL team_stats_by_id(?)',teamid, (error, results, fields) => {
       res.render('team.ejs',{
-          info: teamInfo,
+          info: teamInfo[0],
           stats: results[0]
       })
     })

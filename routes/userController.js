@@ -2,6 +2,9 @@ var express    = require("express");
 //const app = express();
 const router = express.Router();
 const flash = require('connect-flash');
+//const session = require('express-session');
+
+const session = require('express-session');
 
 const mysql = require('mysql');
 const pool = mysql.createPool({
@@ -26,6 +29,7 @@ router.get('/login', (req, res) => res.render('login'));
 router.get('/register', (req, res) => res.render('register'));
 
 
+express().use(session({ secret: 'secret', cookie: { maxAge: 60000 }}))
 
 // Handles register
 router.post('/register', (req, res) => {
@@ -51,6 +55,7 @@ router.post('/register', (req, res) => {
         'success_msg',
         "You are now registered and can log in"
           );
+
           res.redirect('/user/login');
     }
     });
@@ -82,6 +87,7 @@ router.post('/login', (req, res) => {
     } else {
       console.log("login successful");
       //sess.username = results[0][0]; 
+      req.session.user = results[0][0];
       res.render('dashboard', {
         user: results[0][0]
       });
