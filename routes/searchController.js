@@ -15,7 +15,7 @@ const pool = mysql.createPool({
 router.post('/', (req, res) => {
     const searchInput = req.body.search;
     pool.query('CALL find_team_info(?)', [searchInput], (error, results, fields) => {
-        if(results[0].length > 0){
+        if(results.length > 0){
             console.log(results[0][0]);
         res.render('search.ejs', {
             teams: results
