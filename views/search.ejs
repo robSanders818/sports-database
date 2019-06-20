@@ -5,9 +5,9 @@
     <h1>Search</h1>
     <p><ul>
         <%  for(var i = 0; i < teams[0].length; i++){ %>
-            <li><a href ='/teams/stats/<%= teams[0][i].team_id %>'><h4><%= teams[0][i].team_name %></h4></a>
-                <p><%= teams[0][i].league %></p>
-                <p><a href = '/teams/<%= teams[0][i].team_id %>'><h5><%= teams[0][i].division %></h5></a></p>
+            <li><a href ='/team/<%= teams[0][i].team_id %>'><h4><%= teams[0][i].team_name %></h4></a>
+                <p>League <%= teams[0][i].league %></p>
+                <p><a href = '/team/<%= teams[0][i].team_id %>'><h5>Division <%= teams[0][i].division %></h5></a></p>
             </li>
             <br/>
         <% } %>

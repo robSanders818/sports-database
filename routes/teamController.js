@@ -2,6 +2,15 @@
 const express = require('express');
 const router = express.Router();
 
+const mysql = require('mysql');
+const pool = mysql.createPool({
+  connectionLimit : 10,
+  host            : '104.196.165.56',
+  user            : 'teamDD',
+  password        : 'BolajiRobertJovan2022',
+  database        : 'KnowItAllSports'
+});
+
 router.use('/components', express.static('assets'));
 
 // Post a Review Page
@@ -64,32 +73,35 @@ router.post('/review', ensureAuthenticated, (req, res) => {
     });
   }
 });
-
+*/
 
 // Getting the string of the webpage
-router.get('/review/:id', (req, res) =>{
-  postname = req.params; // The Review JSON Object
+router.get('/:teamid', (req, res) =>{
+  teamid = req.params.teamid; // The Review JSON Object
   
   // Finds the user matching the id of the post
-  Review.findById(postname.id, 'title content dorm university user_id', (err, posts) => {
+  pool.query('CALL team_info_by_id(?)',teamid, (error, results, fields) => {
+
 
       //if theres an error it redirects the user to the dashboard(for now)
-      if (err) res.redirect('/dashboard');
+      if (error) res.redirect('/dashboard');
 
       //if there are no posts it redirects the user to the dashboard(for now)
-      if(posts === null) {
+      if(results == null) {
         res.redirect('/dashboard');
       } else {
-        User.findById(posts.user_id, (err, user) => {
-      res.render('posts.ejs',{
-          review: posts,
-          user: user
+        var teamInfo = results[0];
+
+        pool.query('CALL team_stats_by_id(?)',teamid, (error, results, fields) => {
+      res.render('team.ejs',{
+          info: teamInfo,
+          stats: results[0]
       })
     })
     }
   });
 }); 
-*/
+
 
 // Exports the JS middleware object
 module.exports = router;

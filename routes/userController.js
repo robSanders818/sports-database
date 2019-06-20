@@ -76,14 +76,14 @@ router.post('/login', (req, res) => {
         "code":400,
         "failed":"error ocurred"
       }) ;
-    } else if(results.length < 1) {
+    } else if(results[0].length < 1) {
       req.flash("error_msg", "Either your password is wrong or your username doesnt exist");
       res.redirect('/user/login');
     } else {
       console.log("login successful");
       //sess.username = results[0][0]; 
       res.render('dashboard', {
-        user: results[0]
+        user: results[0][0]
       });
     }
   })

@@ -1,0 +1,26 @@
+<!------------Navigation Bar---------------->
+<% include headerTwo.ejs %>
+<!------------Content----------------->
+<div class="dashboard-layout">
+    <h1><%= info.team_name %></h1>
+    <p>
+        <h2><%= info.league %></h2>
+    </p>
+    <p>
+        <h2><%= info.division %></h2>
+    </p>
+    <p>
+            <a href = '/team/<%= info.league %>'><h4><%= info.league %></h4></a>
+        </p>
+
+    <%  for(var i = 0; i < stats.length; i++){ %>
+        <li>
+            <p><h3>Year </h3><%= stats[i].year %></p>
+            <p>Division Rank <%= stats[i].div_rank %></p>
+            <p>Games <%= stats[i].games %></p>
+        </li>
+        <br/>
+    <% } %>
+    <script>
+    </script>
+</div>
