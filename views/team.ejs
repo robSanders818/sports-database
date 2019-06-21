@@ -16,13 +16,13 @@
     <h4>Pitchers</h4>
     <%  for(var i = 0; i < pitchers.length; i++){ %>
         <ul class="list-group">
-                <li class="list-group-item  list-group-item-warning"><a href = '/player/pitcher/<%= pitchers[i].player_id %>'><b>Player_ID: </b><%= pitchers[i].player_id %></a></li>
+                <li class="list-group-item  list-group-item-warning"><a href = '/player/pitcher/<%= pitchers[i].player_id %>'><b>Player: </b><%= pitchers[i].player_name %></a></li>
         </ul>
     <% } %>
     <h4>Batters</h4>
     <%  for(var i = 0; i < batters.length; i++){ %>
         <ul class="list-group">
-                <li class="list-group-item  list-group-item-secondary"><a href = '/player/batter/<%= batters[i].player_id %>'><b>Player_ID: </b><%= batters[i].player_id %></a></li>
+                <li class="list-group-item  list-group-item-secondary"><a href = '/player/batter/<%= batters[i].player_id %>'><b>Player: </b><%= batters[i].player_name %></a></li>
         </ul>
     <% } %>
     <h2>Stats From Each Year</h2>
