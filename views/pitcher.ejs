@@ -1,0 +1,40 @@
+<!------------Navigation Bar---------------->
+<% include headerTwo.ejs %>
+<!------------Content----------------->
+<div class="dashboard-layout">
+    <h1><%= playerName[0].player_name%></h1>
+
+    <h2>Stats From Each Year</h2>
+    <%  for(var i = 0; i < playerStats.length; i++){ %>
+        <ul class="list-group">
+            <li class="list-group-item  list-group-item-primary"><b>Year: </b><%= playerStats[i].year_id %></li>
+            <li class="list-group-item">Team: <a href = '/team/<%= playerStats[0].team_id %>'><%= playerStats[i].team_id %></a></li>
+            <li class="list-group-item  list-group-item-secondary">League: <%= playerStats[i].league_id %></li>
+            <li class="list-group-item  list-group-item-secondary">Wins: <%= playerStats[i].wins %></li>
+            <li class="list-group-item  list-group-item-secondary">Losses: <%= playerStats[i].losses %></li>
+            <li class="list-group-item  list-group-item-secondary">Games: <%= playerStats[i].games %></li>
+            <li class="list-group-item  list-group-item-secondary">Games Started: <%= playerStats[i].games_started %></li>
+            <li class="list-group-item  list-group-item-secondary">Complete Games: <%= playerStats[i].complete_games %></li>
+            <li class="list-group-item  list-group-item-secondary">Shutouts: <%= playerStats[i].shutouts %></li>
+            <li class="list-group-item  list-group-item-secondary">Saves: <%= playerStats[i].saves %></li>
+            <li class="list-group-item  list-group-item-secondary">Hits Allowed: <%= playerStats[i].hits_allowed %></li>
+            <li class="list-group-item  list-group-item-secondary">Earned Runs: <%= playerStats[i].earned_runs %></li>
+            <li class="list-group-item  list-group-item-secondary">Runs Allowed: <%= playerStats[i].runs_allowed %></li>
+            <li class="list-group-item  list-group-item-secondary">Homeruns Allowd: <%= playerStats[i].homeruns_allowed %></li>
+            <li class="list-group-item  list-group-item-secondary">Walks: <%= playerStats[i].walks %></li>
+            <li class="list-group-item  list-group-item-secondary">Strikeouts: <%= playerStats[i].strikeouts %></li>
+            <li class="list-group-item  list-group-item-secondary">ERA: <%= playerStats[i].era %></li>
+            <li class="list-group-item  list-group-item-secondary">Innings: <%= playerStats[i].innings %></li>
+            <li class="list-group-item  list-group-item-secondary">Whip: <%= playerStats[i].whip %></li>
+            <li class="list-group-item  list-group-item-secondary">Intentional Walks: <%= playerStats[i].int_walks %></li>
+            <li class="list-group-item  list-group-item-secondary">Wild Pitches: <%= playerStats[i].wild_pitch %></li>
+            <li class="list-group-item  list-group-item-secondary">HBP: <%= playerStats[i].hbp %></li>
+            <li class="list-group-item  list-group-item-secondary">Balks: <%= playerStats[i].balks %></li>
+            <li class="list-group-item  list-group-item-secondary">Games Finished: <%= playerStats[i].games_finished %></li>
+        </ul>
+        <br/>
+        <br/>
+    <% } %>
+    <script>
+    </script>
+</div>

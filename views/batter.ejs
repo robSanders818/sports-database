@@ -1,0 +1,38 @@
+<!------------Navigation Bar---------------->
+<% include headerTwo.ejs %>
+<!------------Content----------------->
+<div class="dashboard-layout">
+    <h1><%= playerName[0].player_name%></h1>
+
+
+    <h2>Stats From Each Year</h2>
+    <%  for(var i = 0; i < playerStats.length; i++){ %>
+        <ul class="list-group">
+                <li class="list-group-item  list-group-item-primary"><b>Year: </b><%= playerStats[i].year_id %></li>
+                <li class="list-group-item">Team: <a href = '/team/<%= playerStats[0].team_id %>'><%= playerStats[i].team_id %></a></li>
+                <li class="list-group-item  list-group-item-secondary">League: <%= playerStats[i].league_id %></li>
+                <li class="list-group-item  list-group-item-secondary">At Bats: <%= playerStats[i].at_bats %></li>
+                <li class="list-group-item  list-group-item-secondary">Runs: <%= playerStats[i].runs %></li>
+                <li class="list-group-item  list-group-item-secondary">Games: <%= playerStats[i].games %></li>
+                <li class="list-group-item  list-group-item-secondary">Hits: <%= playerStats[i].hits %></li>
+                <li class="list-group-item  list-group-item-secondary">Doubles: <%= playerStats[i].doubles %></li>
+                <li class="list-group-item  list-group-item-secondary">Triples: <%= playerStats[i].triples %></li>
+                <li class="list-group-item  list-group-item-secondary">Homeruns: <%= playerStats[i].homeruns %></li>
+                <li class="list-group-item  list-group-item-secondary">RBI: <%= playerStats[i].rbi %></li>
+                <li class="list-group-item  list-group-item-secondary">Stolen Bases: <%= playerStats[i].stolen_bases %></li>
+                <li class="list-group-item  list-group-item-secondary">Caught Stealing: <%= playerStats[i].caught_stealing %></li>
+                <li class="list-group-item  list-group-item-secondary">Hits By Pitch: <%= playerStats[i].hit_by_pitch %></li>
+                <li class="list-group-item  list-group-item-secondary">Walks: <%= playerStats[i].walks %></li>
+                <li class="list-group-item  list-group-item-secondary">Sacrifice Flies: <%= playerStats[i].sacrifies_flies %></li>
+                <li class="list-group-item  list-group-item-secondary">Double Plays: <%= playerStats[i].double_plays %></li>
+                <li class="list-group-item  list-group-item-secondary">Batting Average: <%= playerStats[i].bat_avg %></li>
+                <li class="list-group-item  list-group-item-secondary">Batting OBP: <%= playerStats[i].bat_obp %></li>
+                <li class="list-group-item  list-group-item-secondary">Batting SLG: <%= playerStats[i].bat_slg %></li>
+                <li class="list-group-item  list-group-item-secondary">Batting OPS: <%= playerStats[i].bat_ops %></li>
+        </ul>
+        <br/>
+        <br/>
+    <% } %>
+    <script>
+    </script>
+</div>
