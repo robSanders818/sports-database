@@ -1,5 +1,5 @@
 # sports-database
-A database of statistics in baseball.
+A database of statistics in baseball, for batters, pitchers and team statistics
 
 ------------------------
 ## **How To Run This Assignment**
