@@ -7,13 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 
 const mysql = require('mysql');
-const pool = mysql.createPool({
-  connectionLimit : 10,
-  host            : '104.196.165.56',
-  user            : 'teamDD',
-  password        : 'BolajiRobertJovan2022',
-  database        : 'KnowItAllSports'
-});
+const pool = require('./config.js');
 
 //route to handle user registration
 //router.post('/register',login.register);
@@ -31,7 +25,7 @@ router.get('/login', (req, res) => res.render('login'));
 router.get('/register', (req, res) => res.render('register'));
 
 
-express().use(session({ secret: 'secret', cookie: { maxAge: 60000 }}))
+express().use(session({ secret: 'secret', saveUninitialized: true,resave: false,cookie: { maxAge: 60000 }}))
 
 // Handles register
 router.post('/register', (req, res) => {

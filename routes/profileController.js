@@ -2,18 +2,13 @@ const express = require('express');
 const router = express.Router();
 const session = require('express-session');
 const mysql = require('mysql');
-const pool = mysql.createPool({
-  connectionLimit : 100,
-  host            : '104.196.165.56',
-  user            : 'teamDD',
-  password        : 'BolajiRobertJovan2022',
-  database        : 'KnowItAllSports'
-});
+const pool = require('./config.js');
+ 
 
 
 router.use('/components', express.static('components'));
 
-express().use(session({ secret: 'secret', cookie: { maxAge: 60000 }}))
+express().use(session({ secret: 'secret', saveUninitialized: true,resave: false, cookie: { maxAge: 60000 }}))
 
 router.use('/account', (req, res) => res.render('account'));
 

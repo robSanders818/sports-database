@@ -2,13 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const mysql = require('mysql');
-const pool = mysql.createPool({
-  connectionLimit : 10,
-  host            : '104.196.165.56',
-  user            : 'teamDD',
-  password        : 'BolajiRobertJovan2022',
-  database        : 'KnowItAllSports'
-});
+const pool = require('./config.js');
 
 router.use('/components', express.static('components'));
 

@@ -13,7 +13,7 @@ const pool = mysql.createPool({
 
 router.use('/components', express.static('components'));
 
-express().use(session({ secret: 'secret', cookie: { maxAge: 60000 }}))
+express().use(session({ secret: 'secret', saveUninitialized: true,resave: false,cookie: { maxAge: 60000 }}))
 
 // Welcome Page
 router.get('/', (req, res) => res.render('index'));
