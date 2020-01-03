@@ -1,4 +1,4 @@
-# sports-database
+# sports-database(defunct will release the schema soon)
 A database of statistics in baseball, for batters, pitchers and team statistics
 
 ------------------------
